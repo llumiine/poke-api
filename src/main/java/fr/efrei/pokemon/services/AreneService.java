@@ -1,7 +1,7 @@
-package fr.efrei.arene.services;
+package fr.efrei.pokemon.services;
 
-import fr.efrei.arene.models.Arene;
-import fr.efrei.arene.repositories.AreneRepository;
+import fr.efrei.pokemon.models.Arene;
+import fr.efrei.pokemon.repositories.AreneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,29 +25,25 @@ public class AreneService {
         return areneRepository.findById(id).orElse(null);
     }
 
-        public void save(Arene arene) {
-        areneRepository.save(arene);
+    public void save(Arene pokemon) {
+        areneRepository.save(pokemon);
     }
 
     public void delete(String id) {
-       areneRepository.deleteById(id);
+        areneRepository.deleteById(id);
     }
 
     public void update(String id, Arene areneBody) {
         Arene areneAModifier = findById(id);
         areneAModifier.setName(areneBody.getName());
-        areneAModifier.setLevel(areneBody.getLevel());
         areneRepository.save(areneAModifier);
     }
 
-    public void partialUpdate(String id, Arene areneBody) {
+    public void partialUpdate(String id, Arene arenBody) {
         Arene areneAModifier = findById(id);
 
-        if(areneBody.getName() != null) {
+        if(arenBody.getName() != null) {
             areneAModifier.setName(areneBody.getName());
-        }
-        if(areneBody.getLevel() != 0) {
-            areneAModifier.setLevel(areneBody.getLevel());
         }
         areneRepository.save(areneAModifier);
     }
