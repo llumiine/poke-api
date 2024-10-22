@@ -39,10 +39,10 @@ public class AreneService {
         areneRepository.save(areneAModifier);
     }
 
-    public void partialUpdate(String id, Arene arenBody) {
+    public void partialUpdate(String id, Arene areneBody) {
         Arene areneAModifier = findById(id);
 
-        if(arenBody.getName() != null) {
+        if(areneBody.getName() != null) {
             areneAModifier.setName(areneBody.getName());
         }
         areneRepository.save(areneAModifier);
