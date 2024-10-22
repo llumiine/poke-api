@@ -28,11 +28,11 @@ public class AreneController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Arene> findById(@PathVariable String id) {
-        Arene pokemon = service.findById(id);
+        Arene arene = service.findById(id);
         if (arene == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(pokemon, HttpStatus.OK);
+        return new ResponseEntity<>(arene, HttpStatus.OK);
     }
 
     // POST
