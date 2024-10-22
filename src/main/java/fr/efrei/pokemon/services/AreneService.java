@@ -1,7 +1,7 @@
-package fr.efrei.pokemon.services;
+package fr.efrei.arene.services;
 
-import fr.efrei.pokemon.models.Arene;
-import fr.efrei.pokemon.repositories.AreneRepository;
+import fr.efrei.arene.models.Arene;
+import fr.efrei.arene.repositories.AreneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
