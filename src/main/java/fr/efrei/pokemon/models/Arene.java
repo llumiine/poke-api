@@ -33,14 +33,6 @@ public class Arene {
         this.level = level;
     }
 
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
     public String getId() {
         return id;
     }

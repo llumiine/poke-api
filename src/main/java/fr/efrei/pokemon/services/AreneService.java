@@ -25,27 +25,24 @@ public class AreneService {
         return areneRepository.findById(id).orElse(null);
     }
 
-    public void save(Arene pokemon) {
-        areneRepository.save(pokemon);
+        public void save(Arene arene) {
+        areneRepository.save(arene);
     }
 
     public void delete(String id) {
        areneRepository.deleteById(id);
     }
 
-    public void update(String id, Arene pokemonBody) {
-        Arene pokemonAModifier = findById(id);
-        AreneAModifier.setType(areneBody.getType());
+    public void update(String id, Arene areneBody) {
+        Arene areneAModifier = findById(id);
         areneAModifier.setName(areneBody.getName());
         areneAModifier.setLevel(areneBody.getLevel());
-        areneRepository.save(pokemonAModifier);
+        areneRepository.save(areneAModifier);
     }
 
     public void partialUpdate(String id, Arene areneBody) {
-        Arene pokemonAModifier = findById(id);
-        if(areneBody.getType() != null) {
-            areneAModifier.setType(areneBody.getType());
-        }
+        Arene areneAModifier = findById(id);
+
         if(areneBody.getName() != null) {
             areneAModifier.setName(areneBody.getName());
         }
